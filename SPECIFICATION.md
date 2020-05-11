@@ -281,18 +281,18 @@ The release status of the mod, one of `stable`, `testing` or `development`, in o
 
 ##### cdda_version
 
-The version of C:DDA this mod is targeting. This may be the string `"any"`, a C:DDA version string (eg: `"0.D"`). In the latter case, any release starting with the `cdda_version` is considered acceptable.
+The version of C:DDA this mod is targeting. The version has format `("any" | release[-build])`, meaning it can be either of the string `"any"`, or a C:DDA version string. A C:DDA version is defined as a conjunction of the `release` part and the optional `build` part.
 
-See [C:DDA Releases](https://cataclysmdda.org/releases/) for a list of stable version strings.
+See [C:DDA Releases](https://cataclysmdda.org/releases/) for list of stable releases, and see [C:DDA Experimental Builds](https://cataclysmdda.org/experimental/) for information about experimental builds.
 
-If no KSP target version is included, a default of `"any"` is assumed.
+ If no C:DDA target version is included, a default of `"any"` is assumed. Two `cdda_version` are compared using the same method as with `version` field.
 
 `cdda_version` examples:
 ```
-# Target C:DDA 0.D "Danny" and all pre-releases prior to 0.E
-"cdda_version": "0.D"
+# Target C:DDA 0.E "Ellison" experimental build #10651
+"cdda_version": "0.E-10651"
 
-# Target C:DDA 0.B "Bring" and all pre-releases prior to 0.C
+# Target C:DDA 0.B "Bring" stable release
 "cdda_version": "0.B"
 ```
 
